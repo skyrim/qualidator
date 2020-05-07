@@ -1,7 +1,7 @@
-import { Validator } from '../Validator';
+import { Validator } from '../Validator'
 
-type BasicTypes = 'undefined' | 'boolean' | 'number' | 'string' | 'bigint' | 'symbol' | 'object' | 'function';
-type ExtendedTypes = 'array';
+type BasicTypes = 'undefined' | 'boolean' | 'number' | 'string' | 'bigint' | 'symbol' | 'object' | 'function'
+type ExtendedTypes = 'array'
 
 export function type(type: BasicTypes | ExtendedTypes): Validator {
 	switch (type) {
@@ -13,14 +13,14 @@ export function type(type: BasicTypes | ExtendedTypes): Validator {
 		case 'symbol':
 		case 'function':
 		case 'object': {
-			return (value: any) => typeof value === type;
+			return (value: any) => typeof value === type
 		}
 		default: {
 			if (type === 'array') {
-				return (value: any) => Array.isArray(value);
+				return (value: any) => Array.isArray(value)
 			}
 		}
 	}
 
-	throw new Error('Unknown type');
+	throw new Error('Unknown type')
 }
