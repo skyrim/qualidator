@@ -1,1 +1,1 @@
-export type Validator = (value: any) => boolean
+export type Validator<T = any> = (value: T) => boolean
