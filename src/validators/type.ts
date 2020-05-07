@@ -15,12 +15,11 @@ export function type(type: BasicTypes | ExtendedTypes): Validator {
 		case 'object': {
 			return (value: any) => typeof value === type
 		}
+		case 'array': {
+			return (value: any) => Array.isArray(value)
+		}
 		default: {
-			if (type === 'array') {
-				return (value: any) => Array.isArray(value)
-			}
+			throw new Error('Unknown type')
 		}
 	}
-
-	throw new Error('Unknown type')
 }

@@ -1,6 +1,6 @@
 import { type } from './type'
 
-describe('type tests', () => {
+describe('type', () => {
 	test('validate a string value with string type validator', () => {
 		expect(type('string')('Hello, World!')).toBe(true)
 	})
@@ -43,6 +43,10 @@ describe('type tests', () => {
 
 	test('validate an array value with array type validator', () => {
 		expect(type('array')([])).toBe(true)
+	})
+
+	test('validate an object value with array type validator', () => {
+		expect(type('array')({})).toBe(false)
 	})
 
 	test('calling type for with an unknown type should throw an exception', () => {
