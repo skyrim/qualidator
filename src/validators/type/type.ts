@@ -1,4 +1,4 @@
-import { Validator } from '../Validator'
+import { Validator } from '../../Validator'
 
 type BasicTypes = 'undefined' | 'boolean' | 'number' | 'string' | 'bigint' | 'symbol' | 'object' | 'function'
 type ExtendedTypes = 'array'

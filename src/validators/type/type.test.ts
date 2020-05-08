@@ -1,4 +1,4 @@
-import { type } from './type'
+import { type } from '.'
 
 describe('type', () => {
 	test('validate a string value with string type validator', () => {
