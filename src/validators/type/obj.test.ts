@@ -9,17 +9,9 @@ describe('obj', () => {
 		expect(obj('Hello' as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test alias object', () => {
-			expect(object({ foo: 123, bar: 321 })).toBe(true)
-		})
-
-		test('test alias isObj', () => {
-			expect(isObj({ foo: 123, bar: 321 })).toBe(true)
-		})
-
-		test('test alias isObject', () => {
-			expect(isObject({ foo: 123, bar: 321 })).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(object).toBe(obj)
+		expect(isObj).toBe(obj)
+		expect(isObject).toBe(obj)
 	})
 })

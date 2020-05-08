@@ -9,13 +9,8 @@ describe('undef', () => {
 		expect(undef('Hello' as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test alias isUndef', () => {
-			expect(isUndef(undefined)).toBe(true)
-		})
-
-		test('test alias isUndefined', () => {
-			expect(isUndefined(undefined)).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(isUndef).toBe(undef)
+		expect(isUndefined).toBe(undef)
 	})
 })

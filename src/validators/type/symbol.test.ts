@@ -9,9 +9,7 @@ describe('symbol', () => {
 		expect(symbol('Hello' as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test alias isBigInt', () => {
-			expect(isSymbol(Symbol())).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(isSymbol).toBe(symbol)
 	})
 })

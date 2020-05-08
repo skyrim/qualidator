@@ -1,4 +1,4 @@
-import { bool, isBool } from './bool'
+import { bool, isBool, isBoolean } from './bool'
 
 describe('bool', () => {
 	test('test boolean validator with a boolean value', () => {
@@ -9,13 +9,8 @@ describe('bool', () => {
 		expect(bool('Hello' as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test isBool alias', () => {
-			expect(isBool(true)).toBe(true)
-		})
-
-		test('test isBoolean alias', () => {
-			expect(isBool(true)).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(isBool).toBe(bool)
+		expect(isBoolean).toBe(bool)
 	})
 })

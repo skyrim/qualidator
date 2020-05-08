@@ -9,9 +9,7 @@ describe('bigint', () => {
 		expect(bigint('Hello' as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test alias isBigInt', () => {
-			expect(isBigInt(BigInt(123456))).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(bigint).toBe(isBigInt)
 	})
 })

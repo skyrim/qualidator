@@ -9,13 +9,8 @@ describe('str', () => {
 		expect(str(42 as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test isStr alias', () => {
-			expect(isStr('Hello')).toBe(true)
-		})
-
-		test('test isString alias', () => {
-			expect(isString('Hello')).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(isStr).toBe(str)
+		expect(isString).toBe(str)
 	})
 })

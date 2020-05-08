@@ -9,17 +9,9 @@ describe('num', () => {
 		expect(num('Hello' as any)).toBe(false)
 	})
 
-	describe('test aliases', () => {
-		test('test alias number', () => {
-			expect(number(1)).toBe(true)
-		})
-
-		test('test alias isNum', () => {
-			expect(isNum(1)).toBe(true)
-		})
-
-		test('test alias isNumber', () => {
-			expect(isNumber(1)).toBe(true)
-		})
+	test('test aliases', () => {
+		expect(number).toBe(num)
+		expect(isNum).toBe(num)
+		expect(isNumber).toBe(num)
 	})
 })
