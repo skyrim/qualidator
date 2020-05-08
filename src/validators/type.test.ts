@@ -6,11 +6,11 @@ describe('type', () => {
 	})
 
 	test('validate a number value with string type validator', () => {
-		expect(type('string')(123)).toBe(false)
+		expect(type('string')(123 as any)).toBe(false)
 	})
 
 	test('validate a string value with number type validator', () => {
-		expect(type('number')('Hello, World!')).toBe(false)
+		expect(type('number')('Hello, World!' as any)).toBe(false)
 	})
 
 	test('validate a number value with string type validator', () => {
@@ -34,7 +34,7 @@ describe('type', () => {
 	})
 
 	test('validate an object value with undefined type validator', () => {
-		expect(type('object')({})).toBe(true)
+		expect(type('object')({} as any)).toBe(true)
 	})
 
 	test('validate a function value with undefined type validator', () => {
@@ -42,11 +42,11 @@ describe('type', () => {
 	})
 
 	test('validate an array value with array type validator', () => {
-		expect(type('array')([])).toBe(true)
+		expect(type('array')([] as any)).toBe(true)
 	})
 
 	test('validate an object value with array type validator', () => {
-		expect(type('array')({})).toBe(false)
+		expect(type('array')({} as any)).toBe(false)
 	})
 
 	test('calling type for with an unknown type should throw an exception', () => {
