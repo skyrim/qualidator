@@ -10,8 +10,8 @@ export function type(type: 'string'): Validator<string>
 export function type(type: 'bigint'): Validator<BigInt>
 export function type(type: 'symbol'): Validator<Symbol>
 export function type(type: 'function'): Validator<Function>
-export function type(type: 'object'): Validator<string>
-export function type(type: 'array'): Validator<string>
+export function type(type: 'object'): Validator<{ [name: string]: any }>
+export function type(type: 'array'): Validator<any[]>
 
 export function type(type: BasicTypes | ExtendedTypes): Validator {
 	switch (type) {

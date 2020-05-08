@@ -1,4 +1,4 @@
-import { type } from '.'
+import { type } from './type'
 
 export const num = type('number')
 export const number = num
