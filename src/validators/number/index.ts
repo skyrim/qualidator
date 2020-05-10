@@ -1,8 +1,0 @@
-export { min } from './min'
-export { max } from './max'
-export { range, between } from './range'
-export { integer, isInt, isInteger } from './integer'
-export { float, isFloat } from './float'
-export { nan, isNan, notNan, isNotNan } from './nan'
-export { finite, isFinite } from './finite'
-export { infinite, isInfinite } from './infinite'

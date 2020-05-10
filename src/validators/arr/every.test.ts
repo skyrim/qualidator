@@ -1,6 +1,6 @@
 import { every, all } from './every'
 import { type } from '../type'
-import { object } from '../object'
+import { object } from '../obj'
 
 describe('every', () => {
   test('validate every where each item is a number', () => {
