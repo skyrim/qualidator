@@ -1,6 +1,7 @@
 export { Validator } from './Validator'
 export * as type from './validators/type'
 export * as logic from './validators/logic'
+export * as bool from './validators/bool'
 export * as number from './validators/number'
 export * as string from './validators/string'
 export * as object from './validators/object'
