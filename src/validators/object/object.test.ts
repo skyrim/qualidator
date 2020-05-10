@@ -1,5 +1,5 @@
 import { object } from './object'
-import { type } from './type'
+import { type } from '../type'
 
 describe('object', () => {
 	describe('invalid parameters', () => {
