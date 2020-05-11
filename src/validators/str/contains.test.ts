@@ -3,7 +3,7 @@ import { contains } from './contains'
 describe('contains', () => {
 	describe('validate contains on an invalid type', () => {
 		test('using a number', () => {
-			expect(contains(42)(1)).toBe(false)
+			expect(contains(42 as any)(1 as any)).toBe(false)
 		})
 	})
 
@@ -19,11 +19,11 @@ describe('contains', () => {
 
 	describe('validate contains on an array', () => {
 		test('when there is an item', () => {
-			expect(contains(21)([4, 8, 15, 16, 21, 43])).toBe(true)
+			expect(contains(21 as any)([4, 8, 15, 16, 21, 43] as any)).toBe(true)
 		})
 
 		test('when there is no item', () => {
-			expect(contains(1337)([4, 8, 15, 16, 21, 43])).toBe(false)
+			expect(contains(1337 as any)([4, 8, 15, 16, 21, 43] as any)).toBe(false)
 		})
 	})
 })

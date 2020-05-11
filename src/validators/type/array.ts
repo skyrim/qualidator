@@ -1,4 +1,5 @@
 import { type } from './type'
 
-export const array = type('array')
-export const isArray = array
+export const arr = type('array')
+export const array = arr
+export const isArray = arr

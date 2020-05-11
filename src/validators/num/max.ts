@@ -1,5 +1,5 @@
-import { ValidatorType } from '../../ValidatorType'
+import { ValidatorFunc } from '../../ValidatorType'
 
-export function max(maxValue: number): ValidatorType<number> {
+export function max(maxValue: number): ValidatorFunc<number> {
   return (value: number) => value <= maxValue
 }

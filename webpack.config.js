@@ -17,8 +17,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, outDir),
-    library: 'qualidator',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs'
   },
   devtool: isProd ? 'source-map' : false,
   module: {
@@ -28,6 +27,10 @@ module.exports = {
         include: [path.resolve(__dirname, 'src')],
         exclude: path.resolve(__dirname, 'node_modules'),
         use: 'awesome-typescript-loader'
+      },
+      {
+        test: /\.json$/,
+        use: 'raw-loader'
       }
     ]
   },

@@ -1,7 +1,7 @@
-import { ValidatorType } from '../../ValidatorType'
+import { ValidatorType, ValidatorFunc, runValidator } from '../../ValidatorType'
 
-export function every(validator: ValidatorType): ValidatorType<any[]> {
-  return (value: any[]) => value.every((a) => validator(a))
+export function every(validator: ValidatorType): ValidatorFunc<any[]> {
+  return (value: any[]) => value.every((a) => runValidator(validator, a))
 }
 
 export const all = every
