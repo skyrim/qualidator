@@ -1,4 +1,4 @@
-const intRegEx = /^-?\d+$/i
+const intRegEx = /^-?\d+$/
 
 export function int(value: string) {
   return intRegEx.test(value)
