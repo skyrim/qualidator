@@ -1,4 +1,4 @@
-export { Validator } from './Validator'
+export { ValidatorType } from './ValidatorType'
 export * as type from './validators/type'
 export * as logic from './validators/logic'
 export * as bool from './validators/bool'

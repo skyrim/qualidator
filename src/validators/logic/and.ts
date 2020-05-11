@@ -1,5 +1,5 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-export function and<T = any>(...validators: Validator<T>[]) {
+export function and<T = any>(...validators: ValidatorType<T>[]) {
 	return (value: T) => validators.every((validator) => validator(value))
 }

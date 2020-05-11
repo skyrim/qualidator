@@ -1,6 +1,6 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-export function contains(substringOrItem: any): Validator {
+export function contains(substringOrItem: any): ValidatorType {
 	return (value: string | any[]) => {
 		switch (typeof value) {
 			case 'string': {

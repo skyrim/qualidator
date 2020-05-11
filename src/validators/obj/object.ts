@@ -1,12 +1,12 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-type Schema = { [name: string]: Schema | Validator }
+type Schema = { [name: string]: Schema | ValidatorType }
 
 type ObjectValidatorOptions = {
 	exact?: boolean
 }
 
-export function object(schema: Schema, options?: ObjectValidatorOptions): Validator<{ [name: string]: any }> {
+export function object(schema: Schema, options?: ObjectValidatorOptions): ValidatorType<{ [name: string]: any }> {
 	if (typeof schema !== 'object') {
 		throw new Error('Invalid schema type. Schema must be an object')
 	}

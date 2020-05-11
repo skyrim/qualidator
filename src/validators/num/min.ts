@@ -1,5 +1,5 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-export function min(minValue: number): Validator<number> {
+export function min(minValue: number): ValidatorType<number> {
   return (value: number) => value >= minValue
 }

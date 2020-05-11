@@ -1,19 +1,20 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-type BasicTypes = 'undefined' | 'boolean' | 'number' | 'string' | 'bigint' | 'symbol' | 'object' | 'function'
-type ExtendedTypes = 'array'
+export type BasicTypes = 'undefined' | 'boolean' | 'number' | 'string' | 'bigint' | 'symbol' | 'object' | 'function'
+export type ExtendedTypes = 'array'
+export type AllTypes = BasicTypes | ExtendedTypes
 
-export function type(type: 'undefined'): Validator<undefined>
-export function type(type: 'boolean'): Validator<boolean>
-export function type(type: 'number'): Validator<number>
-export function type(type: 'string'): Validator<string>
-export function type(type: 'bigint'): Validator<BigInt>
-export function type(type: 'symbol'): Validator<Symbol>
-export function type(type: 'function'): Validator<Function>
-export function type(type: 'object'): Validator<{ [name: string]: any }>
-export function type(type: 'array'): Validator<any[]>
+export function type(type: 'undefined'): ValidatorType<undefined>
+export function type(type: 'boolean'): ValidatorType<boolean>
+export function type(type: 'number'): ValidatorType<number>
+export function type(type: 'string'): ValidatorType<string>
+export function type(type: 'bigint'): ValidatorType<BigInt>
+export function type(type: 'symbol'): ValidatorType<Symbol>
+export function type(type: 'function'): ValidatorType<Function>
+export function type(type: 'object'): ValidatorType<{ [name: string]: any }>
+export function type(type: 'array'): ValidatorType<any[]>
 
-export function type(type: BasicTypes | ExtendedTypes): Validator {
+export function type(type: AllTypes): ValidatorType {
 	switch (type) {
 		case 'undefined':
 		case 'boolean':

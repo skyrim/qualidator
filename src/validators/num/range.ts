@@ -1,6 +1,6 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-export function range(min: number, max?: number): Validator<number> {
+export function range(min: number, max?: number): ValidatorType<number> {
   if (typeof max === 'undefined') {
     return (value) => value >= min
   } else {

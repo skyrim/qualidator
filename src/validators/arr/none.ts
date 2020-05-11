@@ -1,6 +1,6 @@
-import { Validator } from '../../Validator'
+import { ValidatorType } from '../../ValidatorType'
 
-export function none(validator: Validator): Validator<any[]> {
+export function none(validator: ValidatorType): ValidatorType<any[]> {
   return (value: any[]) => {
     return value.every((a) => !validator(a))
   }
