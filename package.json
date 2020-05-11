@@ -1,6 +1,6 @@
 {
   "name": "qualidator",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "All purpose validator",
   "main": "lib/qualidator.min.js",
   "types": "lib/index.d.ts",
@@ -38,8 +38,11 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-unicode-property-regex": "^7.8.8",
     "@types/jest": "^25.2.1",
     "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.1.0",
     "cross-env": "^5.2.0",
     "jest": "^25.5.4",
     "raw-loader": "^4.0.1",

@@ -24,6 +24,15 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: ['@babel/plugin-proposal-unicode-property-regex']
+          }
+        }
+      },
+      {
+        test: /\.ts$/,
         include: [path.resolve(__dirname, 'src')],
         exclude: path.resolve(__dirname, 'node_modules'),
         use: 'awesome-typescript-loader'
