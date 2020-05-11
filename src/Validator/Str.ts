@@ -143,6 +143,20 @@ export class Str extends ValidatorBase {
     return this
   }
 
+  get letters() {
+    this.validators.push(str.letters)
+    return this
+  }
+
+  get words() {
+    this.validators.push(str.words)
+    return this
+  }
+
+  multiple(validator: ValidatorType<any>, separator: RegExp | string = ' ') {
+    this.validators.push(str.multiple(validator, separator))
+    return this
+  }
   uuid(version: 'v1' | 'v2' | 'v3' | 'v4' | 'v5') {
     this.validators.push(str.uuid(version))
     return this
