@@ -1,12 +1,12 @@
-import { Type } from './Type'
-import { Bool } from './Bool'
 import { Num } from './Num'
 import { Str } from './Str'
 import { Obj } from './Obj'
 import { Arr } from './Arr'
+import { Type } from './Type'
+import { Bool } from './Bool'
+import * as logic from '../validators/logic'
 import { ValidatorBase } from './ValidatorBase'
 import { ValidatorType } from '../ValidatorType'
-import * as logic from '../validators/logic'
 import { object, Schema, ObjectValidatorOptions } from '../validators/obj'
 
 export class Qualidator extends ValidatorBase {
@@ -95,5 +95,9 @@ export class Qualidator extends ValidatorBase {
 
   get arr() {
     return new Arr(this.validators)
+  }
+
+  toFunction() {
+    return (value: any) => this.validate(value)
   }
 }
