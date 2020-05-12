@@ -1,8 +1,8 @@
-import { letters } from './letters'
+import { letter } from './letter'
 import { multiple } from './multiple'
 
 export function words(value: string) {
-  return multiple(letters, /\s/)(value)
+  return multiple(letter, /\s/)(value)
 }
 
 export const isWords = words

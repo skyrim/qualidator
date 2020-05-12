@@ -143,8 +143,13 @@ export class Str extends ValidatorBase {
     return this
   }
 
-  get letters() {
-    this.validators.push(str.letters)
+  get letter() {
+    this.validators.push(str.letter)
+    return this
+  }
+
+  get letternum() {
+    this.validators.push(str.letternum)
     return this
   }
 
