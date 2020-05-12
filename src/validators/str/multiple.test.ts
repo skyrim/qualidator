@@ -9,6 +9,11 @@ describe('words', () => {
 
     expect(multiple(letters, ', ')('asdfghj, asdfghj')).toBe(true)
     expect(multiple(letters, '-')('asdfghj, asdfghj')).toBe(false)
+
+    expect(multiple(letters, / ?,?/)('asdfghj, asdfghj')).toBe(true)
+    expect(multiple(letters, / ?,?/)('asdfghj,asdfghj')).toBe(true)
+    expect(multiple(letters, / ?,?/)('asdfghj ,asdfghj')).toBe(true)
+    expect(multiple(letters, / ?,?/)('asdfghj-asdfghj')).toBe(false)
   })
 
   test('test alias', () => {
