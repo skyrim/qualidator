@@ -158,6 +158,11 @@ export class Str extends ValidatorBase {
     return this
   }
 
+  get IBAN() {
+    this.validators.push(str.IBAN)
+    return this
+  }
+
   multiple(validator: ValidatorType<any>, separator: RegExp | string = ' ') {
     this.validators.push(str.multiple(validator, separator))
     return this
