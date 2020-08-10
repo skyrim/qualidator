@@ -163,6 +163,16 @@ export class Str extends ValidatorBase {
     return this
   }
 
+  get BIC() {
+    this.validators.push(str.BIC)
+    return this
+  }
+
+  get SWIFT() {
+    this.validators.push(str.SWIFT)
+    return this
+  }
+
   multiple(validator: ValidatorType<any>, separator: RegExp | string = ' ') {
     this.validators.push(str.multiple(validator, separator))
     return this

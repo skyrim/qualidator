@@ -91,7 +91,7 @@ describe('iban', () => {
     expect(IBAN('NL20INGB0001234567')).toBe(true)
     expect(IBAN('XX00 1234 5678 9012 3456 7890 1234 5678 90')).toBe(false)
     expect(IBAN('YY00123456789012345678901234567890')).toBe(false)
-    expect(IBAN('NL20-ING-B0-00-12-34-567')).toBe(true)
+    expect(IBAN('NL20-ING-B0-00-12-34-567')).toBe(false)
     expect(IBAN('XX22YYY1234567890123')).toBe(false)
     expect(IBAN('foo@i.ban')).toBe(false)
 

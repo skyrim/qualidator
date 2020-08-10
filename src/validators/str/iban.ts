@@ -4,6 +4,10 @@ const smellsLikeIban = (str: string) =>
   )
 
 export function IBAN(value: string) {
+  if (!smellsLikeIban(value)) {
+    return false
+  }
+
   const ibanStripped = value
     .replace(/[^A-Z0-9]+/gi, '') //keep numbers and letters only
     .toUpperCase() //calculation expects upper-case
@@ -13,16 +17,21 @@ export function IBAN(value: string) {
     return false
   }
 
-  const numbericed = ((m[3] + m[1] + m[2]).replace as any)(/[A-Z]/g, (ch: string) => {
-    //replace upper-case characters by numbers 10 to 35
-    return ch.charCodeAt(0) - 55
-  })
+  const numbericed = ((m[3] + m[1] + m[2]).replace as any)(
+    /[A-Z]/g,
+    (ch: string) => {
+      //replace upper-case characters by numbers 10 to 35
+      return ch.charCodeAt(0) - 55
+    }
+  )
 
   //The resulting number would be to long for javascript to handle without loosing precision.
   //So the trick is to chop the string up in smaller parts.
-  const mod97 = numbericed.match(/\d{1,7}/g).reduce((total: number, curr: number) => {
-    return Number(total + curr) % 97
-  }, 0)
+  const mod97 = numbericed
+    .match(/\d{1,7}/g)
+    .reduce((total: number, curr: number) => {
+      return Number(total + curr) % 97
+    }, 0)
 
   return mod97 === 1
 }
