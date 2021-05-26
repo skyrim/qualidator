@@ -6,4 +6,10 @@ describe('min', () => {
     expect(min(10)(10)).toBe(true)
     expect(min(10)(100)).toBe(true)
   })
+
+  test('validate string using minimum value', () => {
+    expect(min(10)('1')).toBe(false)
+    expect(min(10)('10')).toBe(true)
+    expect(min(10)('100')).toBe(true)
+  })
 })

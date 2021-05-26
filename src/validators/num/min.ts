@@ -1,5 +1,5 @@
 import { ValidatorFunc } from '../../ValidatorType'
 
-export function min(minValue: number): ValidatorFunc<number> {
-  return (value: number) => value >= minValue
+export function min(minValue: number): ValidatorFunc<number | string> {
+  return (value: number | string) => value >= minValue
 }

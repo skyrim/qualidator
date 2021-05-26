@@ -33,6 +33,16 @@ export class Num extends ValidatorBase {
     return this
   }
 
+  get positive() {
+    this.validators.push(num.positive)
+    return this
+  }
+
+  get negative() {
+    this.validators.push(num.negative)
+    return this
+  }
+
   max(maxValue: number) {
     this.validators.push(num.max(maxValue))
     return this

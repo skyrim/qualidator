@@ -1,13 +1,16 @@
 import { ValidatorFunc } from '../../ValidatorType'
 
-export function range(min: number, max?: number): ValidatorFunc<number> {
+export function range(
+  min: number,
+  max?: number
+): ValidatorFunc<number | string> {
   if (typeof max === 'undefined') {
-    return (value) => value >= min
+    return (value) => +value >= min
   } else {
     if (min === max) {
-      return (value) => value === min
+      return (value) => +value === min
     } else {
-      return (value) => value >= min && value <= max
+      return (value) => +value >= min && +value <= max
     }
   }
 }

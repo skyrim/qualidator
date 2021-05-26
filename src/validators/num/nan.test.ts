@@ -4,11 +4,13 @@ describe('nan', () => {
   test('validate that a value is NaN', () => {
     expect(nan(NaN)).toBe(true)
     expect(nan(42)).toBe(false)
+    expect(nan('NaN')).toBe(false)
   })
 
   test('validate that a value is not NaN', () => {
     expect(notNan(NaN)).toBe(false)
     expect(notNan(42)).toBe(true)
+    expect(notNan('NaN')).toBe(true)
   })
 
   test('test alises', () => {

@@ -1,5 +1,6 @@
-export function float(value: number): boolean {
-  return !Number.isInteger(value)
+export function float(value: number | string): boolean {
+  const parsedValue = +value
+  return !Number.isNaN(parsedValue) && !Number.isInteger(+parsedValue);
 }
 
-export const isFloat = float
+export const isFloat = float;
