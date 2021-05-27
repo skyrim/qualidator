@@ -2,10 +2,11 @@ import { ValidatorBase } from './ValidatorBase'
 import { ValidatorType } from '../ValidatorType'
 import * as type from '../validators/type'
 import * as num from '../validators/num'
+import * as logic from '../validators/logic'
 
 export class Num extends ValidatorBase {
   constructor(validators: ValidatorType[]) {
-    super([type.num, ...validators])
+    super([logic.or<any>(type.num, type.str), ...validators])
   }
 
   get finite() {
