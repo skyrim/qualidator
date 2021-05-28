@@ -69,6 +69,16 @@ export class Qualidator extends ValidatorBase {
     return this
   }
 
+  oneOf(...values: any[]) {
+    this.validators.push(logic.oneOf(values))
+    return this
+  }
+
+  noneOf(...values: any[]) {
+    this.validators.push(logic.noneOf(values))
+    return this
+  }
+
   get type(): Type {
     return new Type(this.validators)
   }
