@@ -23,6 +23,8 @@ type QVType = {
   gteq(value: any): Qualidator
   lt(value: any): Qualidator
   lteq(value: any): Qualidator
+  oneOf(...values: any[]): Qualidator
+  noneOf(...values: any[]): Qualidator
   readonly type: Type
   readonly bool: Bool
   readonly num: Num
@@ -79,6 +81,14 @@ qv.lt = (value: any) => {
 
 qv.lteq = (value: any) => {
   return new Qualidator([logic.lteq(value)])
+}
+
+qv.oneOf = (...values: any[]) => {
+  return new Qualidator([logic.oneOf(values)])
+}
+
+qv.noneOf = (...values: any[]) => {
+  return new Qualidator([logic.noneOf(values)])
 }
 
 Object.defineProperty(qv, 'type', {
