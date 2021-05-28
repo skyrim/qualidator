@@ -84,11 +84,11 @@ qv.lteq = (value: any) => {
 }
 
 qv.oneOf = (...values: any[]) => {
-  return new Qualidator([logic.oneOf(values)])
+  return new Qualidator([logic.oneOf(...values)])
 }
 
 qv.noneOf = (...values: any[]) => {
-  return new Qualidator([logic.noneOf(values)])
+  return new Qualidator([logic.noneOf(...values)])
 }
 
 Object.defineProperty(qv, 'type', {

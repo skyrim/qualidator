@@ -70,12 +70,12 @@ export class Qualidator extends ValidatorBase {
   }
 
   oneOf(...values: any[]) {
-    this.validators.push(logic.oneOf(values))
+    this.validators.push(logic.oneOf(...values))
     return this
   }
 
   noneOf(...values: any[]) {
-    this.validators.push(logic.noneOf(values))
+    this.validators.push(logic.noneOf(...values))
     return this
   }
 
