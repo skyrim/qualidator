@@ -9,8 +9,9 @@ import * as arr from './validators/arr'
 
 export { ValidatorType } from './ValidatorType'
 
-export { qv }
 export const validators = { type, logic, bool, num, str, obj, arr }
+export { qv, qv as Qualidator }
+export default qv
 
 declare const PACKAGE_VERSION: any
 export const VERSION: string = PACKAGE_VERSION
