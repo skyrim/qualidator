@@ -1,9 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
-const ATL = require('awesome-typescript-loader')
-
-const package = JSON.parse(fs.readFileSync('package.json').toString())
+const package = require('./package.json')
 
 const outDir = 'lib'
 
@@ -31,30 +29,16 @@ module.exports = {
           }
         }
       },
-      {
-        test: /\.ts$/,
-        include: [path.resolve(__dirname, 'src')],
-        exclude: path.resolve(__dirname, 'node_modules'),
-        use: 'awesome-typescript-loader'
-      },
-      {
-        test: /\.json$/,
-        use: 'raw-loader'
-      }
+      { test: /\.ts$/, use: 'ts-loader' },
+      { test: /\.json$/, use: 'raw-loader' }
     ]
   },
   resolve: {
     extensions: ['.ts']
   },
   plugins: [
-    new ATL.CheckerPlugin(),
     new webpack.DefinePlugin({
       PACKAGE_VERSION: JSON.stringify(package.version)
     })
-  ],
-  devServer: {
-    inline: false,
-    open: true,
-    watchContentBase: true
-  }
+  ]
 }
