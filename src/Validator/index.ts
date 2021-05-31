@@ -34,61 +34,20 @@ type QVType = {
 
 export const qv: QVType = (() => new Qualidator()) as any
 
-qv.not = (validator: ValidatorType<any>) => {
-  return new Qualidator().not(validator)
-}
-
-qv.and = (...validators: ValidatorType<any>[]) => {
-  return new Qualidator().and(...validators)
-}
-
-qv.or = (...validators: ValidatorType<any>[]) => {
-  return new Qualidator().or(...validators)
-}
-
-qv.is = (value: any) => {
-  return new Qualidator().is(value)
-}
-
-qv.ident = (value: any) => {
-  return new Qualidator().ident(value)
-}
-
-qv.diff = (value: any) => {
-  return new Qualidator().diff(value)
-}
-
-qv.eq = (value: any) => {
-  return new Qualidator().eq(value)
-}
-
-qv.neq = (value: any) => {
-  return new Qualidator().neq(value)
-}
-
-qv.gt = (value: any) => {
-  return new Qualidator().gt(value)
-}
-
-qv.gteq = (value: any) => {
-  return new Qualidator().gteq(value)
-}
-
-qv.lt = (value: any) => {
-  return new Qualidator().lt(value)
-}
-
-qv.lteq = (value: any) => {
-  return new Qualidator().lteq(value)
-}
-
-qv.oneOf = (...values: any[]) => {
-  return new Qualidator().oneOf(...values)
-}
-
-qv.noneOf = (...values: any[]) => {
-  return new Qualidator().noneOf(...values)
-}
+qv.not = (validator: ValidatorType<any>) => new Qualidator().not(validator)
+qv.and = (...validators: ValidatorType<any>[]) => new Qualidator().and(...validators)
+qv.or = (...validators: ValidatorType<any>[]) => new Qualidator().or(...validators)
+qv.is = (value: any) => new Qualidator().is(value)
+qv.ident = (value: any) => new Qualidator().ident(value)
+qv.diff = (value: any) => new Qualidator().diff(value)
+qv.eq = (value: any) => new Qualidator().eq(value)
+qv.neq = (value: any) => new Qualidator().neq(value)
+qv.gt = (value: any) => new Qualidator().gt(value)
+qv.gteq = (value: any) => new Qualidator().gteq(value)
+qv.lt = (value: any) => new Qualidator().lt(value)
+qv.lteq = (value: any) => new Qualidator().lteq(value)
+qv.oneOf = (...values: any[]) => new Qualidator().oneOf(...values)
+qv.noneOf = (...values: any[]) => new Qualidator().noneOf(...values)
 
 Object.defineProperty(qv, 'type', {
   enumerable: true,

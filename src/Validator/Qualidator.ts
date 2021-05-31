@@ -80,7 +80,7 @@ export class Qualidator extends ValidatorBase {
     return this
   }
 
-  get type(): Type {
+  get type() {
     return new Type(this.validators)
   }
 
