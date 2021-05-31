@@ -6,7 +6,6 @@ import { Obj } from './Obj'
 import { Arr } from './Arr'
 import { Qualidator } from './Qualidator'
 import { ValidatorType } from '../ValidatorType'
-import * as logic from '../validators/logic'
 import { Schema, ObjectValidatorOptions } from '../validators/obj'
 
 type QVType = {
@@ -36,59 +35,59 @@ type QVType = {
 export const qv: QVType = (() => new Qualidator()) as any
 
 qv.not = (validator: ValidatorType<any>) => {
-  return new Qualidator([logic.not(validator)])
+  return new Qualidator().not(validator)
 }
 
 qv.and = (...validators: ValidatorType<any>[]) => {
-  return new Qualidator([logic.and(...validators)])
+  return new Qualidator().and(...validators)
 }
 
 qv.or = (...validators: ValidatorType<any>[]) => {
-  return new Qualidator([logic.or(...validators)])
+  return new Qualidator().or(...validators)
 }
 
 qv.is = (value: any) => {
-  return new Qualidator([logic.is(value)])
+  return new Qualidator().is(value)
 }
 
 qv.ident = (value: any) => {
-  return new Qualidator([logic.ident(value)])
+  return new Qualidator().ident(value)
 }
 
 qv.diff = (value: any) => {
-  return new Qualidator([logic.diff(value)])
+  return new Qualidator().diff(value)
 }
 
 qv.eq = (value: any) => {
-  return new Qualidator([logic.eq(value)])
+  return new Qualidator().eq(value)
 }
 
 qv.neq = (value: any) => {
-  return new Qualidator([logic.neq(value)])
+  return new Qualidator().neq(value)
 }
 
 qv.gt = (value: any) => {
-  return new Qualidator([logic.gt(value)])
+  return new Qualidator().gt(value)
 }
 
 qv.gteq = (value: any) => {
-  return new Qualidator([logic.gteq(value)])
+  return new Qualidator().gteq(value)
 }
 
 qv.lt = (value: any) => {
-  return new Qualidator([logic.lt(value)])
+  return new Qualidator().lt(value)
 }
 
 qv.lteq = (value: any) => {
-  return new Qualidator([logic.lteq(value)])
+  return new Qualidator().lteq(value)
 }
 
 qv.oneOf = (...values: any[]) => {
-  return new Qualidator([logic.oneOf(...values)])
+  return new Qualidator().oneOf(...values)
 }
 
 qv.noneOf = (...values: any[]) => {
-  return new Qualidator([logic.noneOf(...values)])
+  return new Qualidator().noneOf(...values)
 }
 
 Object.defineProperty(qv, 'type', {

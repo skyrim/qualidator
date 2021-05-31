@@ -12,6 +12,7 @@ import { object, Schema, ObjectValidatorOptions } from '../validators/obj'
 export class Qualidator extends ValidatorBase {
   not(validator: ValidatorType<any>) {
     this.validators.push(logic.not(validator))
+    return this
   }
 
   and(...validators: ValidatorType<any>[]) {
