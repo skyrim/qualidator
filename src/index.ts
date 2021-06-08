@@ -1,16 +1,9 @@
 import { qv } from './Validator'
-import * as type from './validators/type'
-import * as logic from './validators/logic'
-import * as bool from './validators/bool'
-import * as num from './validators/num'
-import * as str from './validators/str'
-import * as obj from './validators/obj'
-import * as arr from './validators/arr'
+import * as validators from './validators'
 
 export { ValidatorType } from './ValidatorType'
 
-export const validators = { type, logic, bool, num, str, obj, arr }
-export { qv, qv as Qualidator }
+export { qv, qv as Qualidator, validators }
 export default qv
 
 declare const PACKAGE_VERSION: any
