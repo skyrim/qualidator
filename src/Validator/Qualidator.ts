@@ -6,8 +6,12 @@ import { Type } from './Type'
 import { Bool } from './Bool'
 import * as logic from '../validators/logic'
 import { ValidatorBase } from './ValidatorBase'
-import { ValidatorType } from '../ValidatorType'
-import { object, Schema, ObjectValidatorOptions } from '../validators/obj'
+import type { ValidatorType } from '../ValidatorType'
+import {
+  object,
+  type Schema,
+  type ObjectValidatorOptions
+} from '../validators/obj'
 
 export class Qualidator extends ValidatorBase {
   not(validator: ValidatorType<any>) {

@@ -1,4 +1,4 @@
-import { ValidatorType, runValidator } from '../../ValidatorType'
+import { runValidator, type ValidatorType } from '../../ValidatorType'
 
 export function multiple(
   validator: ValidatorType<any>,

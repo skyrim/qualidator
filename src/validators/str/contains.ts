@@ -1,4 +1,4 @@
-import { ValidatorFunc } from '../../ValidatorType'
+import type { ValidatorFunc } from '../../ValidatorType'
 
 export function contains(substringOrItem: string): ValidatorFunc<string> {
   return (value: string | any[]) => {

@@ -1,4 +1,4 @@
-import { ValidatorType, ValidatorInterface } from '../ValidatorType'
+import type { ValidatorType, ValidatorInterface } from '../ValidatorType'
 
 export abstract class ValidatorBase implements ValidatorInterface {
   protected validators: ValidatorType<any>[]
@@ -11,9 +11,8 @@ export abstract class ValidatorBase implements ValidatorInterface {
     return this.validators.every((validate) => {
       if (typeof validate === 'function') {
         return validate(value)
-      } else {
-        return validate.validate(value)
       }
+      return validate.validate(value)
     })
   }
 }

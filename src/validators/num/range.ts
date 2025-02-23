@@ -1,4 +1,4 @@
-import { ValidatorFunc } from '../../ValidatorType'
+import type { ValidatorFunc } from '../../ValidatorType'
 
 export function range(
   min: number,
@@ -6,13 +6,11 @@ export function range(
 ): ValidatorFunc<number | string> {
   if (typeof max === 'undefined') {
     return (value) => +value >= min
-  } else {
-    if (min === max) {
-      return (value) => +value === min
-    } else {
-      return (value) => +value >= min && +value <= max
-    }
   }
+  if (min === max) {
+    return (value) => +value === min
+  }
+  return (value) => +value >= min && +value <= max
 }
 
 export const between = (min: number, max: number) => range(min, max)

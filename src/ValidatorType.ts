@@ -8,7 +8,6 @@ export type ValidatorType<T = any> = ValidatorFunc<T> | ValidatorInterface<T>
 export function runValidator<T>(validator: ValidatorType<T>, value: T) {
   if (typeof validator === 'function') {
     return validator(value)
-  } else {
-    return validator.validate(value)
   }
+  return validator.validate(value)
 }

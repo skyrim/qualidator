@@ -1,5 +1,5 @@
 import { ValidatorBase } from './ValidatorBase'
-import { ValidatorType } from '../ValidatorType'
+import type { ValidatorType } from '../ValidatorType'
 import * as type from '../validators/type'
 import * as num from '../validators/num'
 import * as logic from '../validators/logic'

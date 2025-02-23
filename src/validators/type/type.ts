@@ -1,4 +1,4 @@
-import { ValidatorFunc } from '../../ValidatorType'
+import type { ValidatorFunc } from '../../ValidatorType'
 
 export type BasicTypes = 'undefined' | 'boolean' | 'number' | 'string' | 'bigint' | 'symbol' | 'object' | 'function'
 export type ExtendedTypes = 'array'

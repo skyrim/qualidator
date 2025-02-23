@@ -1,4 +1,4 @@
-import { ValidatorType, runValidator } from '../../ValidatorType'
+import { runValidator, type ValidatorType } from '../../ValidatorType'
 
 export function or<T = any>(...validators: ValidatorType<T>[]) {
   return (value: T) =>

@@ -1,9 +1,10 @@
 {
   "name": "qualidator",
-  "version": "0.1.16",
+  "version": "0.2.0",
   "description": "All purpose validator",
-  "main": "lib/qualidator.min.js",
+  "main": "lib/qualidator.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "homepage": "https://skyrim.github.io/qualidator/",
   "repository": {
     "type": "git",
@@ -14,14 +15,9 @@
     "url": "https://github.com/skyrim/qualidator/issues"
   },
   "scripts": {
-    "start": "npm run build:dev && webpack-dev-server",
-    "build": "npm run clean && npm run build:dev && npm run build:prod",
-    "build:watch": "webpack -w",
-    "build:dev": "webpack",
-    "build:prod": "cross-env NODE_ENV=production webpack",
-    "clean": "rimraf lib",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "build": "node ./build.js",
+    "test": "vitest",
+    "test:watch": "vitest --watch"
   },
   "keywords": [
     "validator",
@@ -34,22 +30,13 @@
     "prop",
     "types"
   ],
-  "author": "Stefan Stojković <skyrim@live.com> (https://stefan100.com)",
+  "author": "Stefan Stojković <skyrim@live.com> (https://stoikos.io)",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/plugin-proposal-unicode-property-regex": "^7.10.4",
-    "@types/jest": "^26.0.9",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.1.0",
-    "cross-env": "^7.0.2",
-    "jest": "^26.2.2",
-    "raw-loader": "^4.0.1",
-    "rimraf": "^3.0.2",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "esbuild": "^0.25.0",
+    "fs-extra": "^11.3.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.6"
   },
   "files": [
     "lib/**/*"

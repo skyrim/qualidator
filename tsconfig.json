@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es6",
     "declaration": true,
-    "lib": ["dom", "es5", "es2016"],
+    "declarationDir": "lib",
+    "emitDeclarationOnly": true,
+    "lib": ["dom", "es2020"],
     "strict": true,
-    "outDir": "lib"
+    "outDir": "lib",
+    "types": ["vitest/globals"]
   },
-  "include": ["src/**.*"],
-  "exclude": ["node_modules"]
+  "exclude": ["src/**/*.test.ts"]
 }

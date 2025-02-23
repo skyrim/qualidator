@@ -1,15 +1,13 @@
-import { ValidatorFunc } from '../../ValidatorType'
+import type { ValidatorFunc } from '../../ValidatorType'
 
 export function length(min: number, max?: number): ValidatorFunc<any[]> {
   if (typeof max === 'undefined') {
     return (value: any[]) => value.length >= min
-  } else {
-    if (min === max) {
-      return (value: any[]) => value.length === min
-    } else {
-      return (value: any[]) => value.length >= min && value.length <= max
-    }
   }
+  if (min === max) {
+    return (value: any[]) => value.length === min
+  }
+  return (value: any[]) => value.length >= min && value.length <= max
 }
 
 export const minLength = (min: number) => length(min)

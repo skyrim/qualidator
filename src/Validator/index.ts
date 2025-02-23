@@ -1,13 +1,13 @@
-import { Type } from './Type'
-import { Bool } from './Bool'
-import { Num } from './Num'
-import { Str } from './Str'
-import { Obj } from './Obj'
-import { Arr } from './Arr'
+import type { Type } from './Type'
+import type { Bool } from './Bool'
+import type { Num } from './Num'
+import type { Str } from './Str'
+import type { Obj } from './Obj'
+import type { Arr } from './Arr'
+import type { ValidatorType } from '../ValidatorType'
+import type { Schema, ObjectValidatorOptions } from '../validators/obj'
 import { Qualidator } from './Qualidator'
-import { ValidatorType } from '../ValidatorType'
 import * as logic from '../validators/logic'
-import { Schema, ObjectValidatorOptions } from '../validators/obj'
 
 type QVType = {
   (): Qualidator
