@@ -1,6 +1,6 @@
 {
   "name": "qualidator",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "All purpose validator",
   "main": "lib/qualidator.js",
   "types": "lib/index.d.ts",
